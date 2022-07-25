@@ -8,8 +8,9 @@ public class StatsServiceTests {
     public void minSalesCheck() { //Проверка определения месяца с минимальными продажами
         StatsService service = new StatsService();
 
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonth = 9;
-        int actualMonth = service.minSales();
+        int actualMonth = service.minSales(sales);
 
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
@@ -18,8 +19,9 @@ public class StatsServiceTests {
     public void maxSalesCheck() { //Проверка определения месяца с максимальными продажами
         StatsService service = new StatsService();
 
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonth = 8;
-        int actualMonth = service.maxSales();
+        int actualMonth = service.maxSales(sales);
 
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
@@ -28,8 +30,9 @@ public class StatsServiceTests {
     public void sumSales() { //Проверка при определении суммы продаж
         StatsService service = new StatsService();
 
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedSum = 180;
-        int actualSum = service.sumSales();
+        int actualSum = service.sumSales(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
@@ -38,8 +41,9 @@ public class StatsServiceTests {
     public void avgSales() { //Проверка при определении суммы средней продажи в месяц
         StatsService service = new StatsService();
 
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedAvg = 15;
-        int actualAvg = service.avgSales();
+        int actualAvg = service.avgSales(sales);
 
         Assertions.assertEquals(expectedAvg, actualAvg);
     }
@@ -48,8 +52,9 @@ public class StatsServiceTests {
     public void countMonthsUnderAvg() { //Проверка определения месяцев с продажами ниже среднего
         StatsService service = new StatsService();
 
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedCount = 5;
-        int actualCount = service.countMonthsUnderAvg();
+        int actualCount = service.countMonthsUnderAvg(sales);
 
         Assertions.assertEquals(expectedCount, actualCount);
     }
@@ -58,8 +63,9 @@ public class StatsServiceTests {
     public void countMonthsUpperAvg() { //Проверка определения месяцев с продажами выше среднего
         StatsService service = new StatsService();
 
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedCount = 5;
-        int actualCount = service.countMonthsUpperAvg();
+        int actualCount = service.countMonthsUpperAvg(sales);
 
         Assertions.assertEquals(expectedCount, actualCount);
     }
